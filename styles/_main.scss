@@ -1,0 +1,102 @@
+@keyframes colorCycle {
+    0%, 55% {
+        filter: brightness(0);// brightness fica escuro mas como eu usei o invert ele fica claro
+        display: none;
+    }
+    11%, 33% {
+        filter: none;
+        visibility: visible;
+    }
+}
+
+main {
+    max-width: 104.8rem; //1rem é igual a 10px
+    padding: 5.6rem 2.4rem;
+    display: flex; 
+    flex: 1; //para o main ocupar todo o espaço da tela
+    flex-direction: column; //ficar um encima do outro
+    align-items: center;
+    justify-content: center; //joga todos os items para o centro da tela
+    
+    h1{
+        display: flex;
+        flex-direction: column; 
+        align-items: center;
+        text-align: center;
+
+        font-size: 12.8rem;
+        line-height: 100%;
+        letter-spacing: -1.24rem; //espaçamento entre ceracteres
+        color: var(--white); //dentro de reset tem variavel por isso estamo usando
+
+        span{
+            filter: brightness(0);
+            visibility: hidden;
+
+            padding: 0 0.67rem;
+
+            background-clip: text; //colocar o background no text
+            -webkit-background-clip: text; //colocar o background no text(para outros navegadores)
+            -webkit-text-fill-color: transparent; //permite que o gradient seja usada na font
+
+            animation: colorCycle 10s ease-in-out infinite;
+
+        }
+
+        span:nth-child(1) { // seleciona elementos com base em suas posições em um grupo de elementos irmãos.
+            background-image: linear-gradient(90deg, #007cf0, #00dfd8);
+        }
+
+        span:nth-child(2) {
+            background-image: linear-gradient(90deg, #7928ca, #ff0080);
+            animation-delay: 3.33s;
+        }
+
+        span:nth-child(3) {
+            background-image: linear-gradient(90deg, #ff4d4d, #f9cb28);
+            animation-delay: 6.66s;
+        }
+    }
+
+    .buttons {
+        margin: 6.4rem;
+        display: flex;
+        align-items: center;
+
+        > button {
+            background: var(--white);
+            color: var(--black);
+            border-radius: 0.4rem;
+
+            margin: 1.2rem;
+            padding: 1.5rem 4.5rem;
+            border: 0.1rem solid var(--white);
+
+            font-size: 1.6rem;
+            font-weight: 500;
+
+            cursor: pointer;
+            transition: .2s ease-in;
+
+            &.outlined {
+                background: transparent;
+                color: var(--gray);
+                border: 0.1rem solid var(--gray);
+            }
+
+            &:hover {
+                background: transparent;
+                color: var(--white);
+                border: 0.1rem solid var(--white);
+            }
+        }
+    }
+
+    h2 {
+        margin: 0, 6.4rem;
+        text-align: center;
+        font-size: 2rem;
+        font-weight: 400; //regular
+        letter-spacing: -0.04rem;
+    }
+}
