@@ -119,7 +119,7 @@ header .right .avatar {
   0%, 55% {
     -webkit-filter: brightness(0);
             filter: brightness(0);
-    display: none;
+    visibility: hidden;
   }
   11%, 33% {
     -webkit-filter: none;
@@ -132,7 +132,7 @@ header .right .avatar {
   0%, 55% {
     -webkit-filter: brightness(0);
             filter: brightness(0);
-    display: none;
+    visibility: hidden;
   }
   11%, 33% {
     -webkit-filter: none;

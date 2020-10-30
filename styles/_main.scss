@@ -1,7 +1,7 @@
 @keyframes colorCycle {
     0%, 55% {
         filter: brightness(0);// brightness fica escuro mas como eu usei o invert ele fica claro
-        display: none;
+        visibility: hidden;
     }
     11%, 33% {
         filter: none;
